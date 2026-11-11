@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#0e141c" />
+  <meta name="description" content="滑管星——用伸縮號吹《一閃一閃》、《兩隻老虎》、《歡樂頌》同《藍色多瑞河》。上下調音高，按住就吹。" />
+  <title>滑管星</title>
+  <link rel="stylesheet" href="style.css?v=20261111a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23151c2a'/%3E%3Cpath d='M10 34c8-6 22-8 34-4' fill='none' stroke='%23e8c15a' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='10' cy='34' r='6' fill='none' stroke='%23e8c15a' stroke-width='3'/%3E%3Cpath d='M40 18l4 8 9-1-6 7 3 8-8-5-8 5 3-8-6-7 9 1z' fill='%23f3ecdc'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="stage" aria-label="滑管星遊戲畫面"></canvas>
+
+    <button type="button" id="btn-mute" class="icon-btn hidden" aria-label="靜音" title="靜音">
+      <svg class="ico-on" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+        <path d="M3 8.2h2.6l3.7-3.2v10L5.6 11.8H3V8.2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M12.2 7.4c.9.8.9 2.4 0 3.2M14.3 5.8c1.8 1.6 1.8 5 0 6.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <svg class="ico-off" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+        <path d="M3 8.2h2.6l3.7-3.2v10L5.6 11.8H3V8.2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M12.4 7.2l5 5.6M17.4 7.2l-5 5.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <section id="screen-title" class="panel" aria-labelledby="game-title">
+      <div class="panel-inner">
+        <p class="eyebrow">即玩小遊戲</p>
+        <h1 id="game-title">滑管星</h1>
+        <p class="subtitle">上下移動調音高，按住就吹。走音會發出不準的伸縮號聲。</p>
+        <div id="song-list" class="song-list" role="group" aria-label="選擇樂曲"></div>
+        <button type="button" id="btn-mute-title" class="btn ghost">聲音：開</button>
+      </div>
+    </section>
+
+    <section id="screen-result" class="panel hidden" aria-labelledby="result-title">
+      <div class="panel-inner result-inner">
+        <p class="eyebrow">演奏結果</p>
+        <h2 id="result-title">評級</h2>
+        <p id="result-song" class="result-song"></p>
+        <p id="result-headline" class="grade">—</p>
+        <p id="result-score" class="result-score">分數 —</p>
+        <p id="result-combo" class="result-combo">最長連擊 —</p>
+        <p id="result-best" class="result-best hidden">自我最佳更新</p>
+        <p id="result-sub" class="result-sub"></p>
+        <button type="button" id="btn-next" class="btn primary hidden">下一首</button>
+        <button type="button" id="btn-retry" class="btn primary">再吹一次</button>
+        <button type="button" id="btn-home" class="btn ghost">返回曲目表</button>
+        <button type="button" id="btn-mute-result" class="btn ghost">聲音：開</button>
+      </div>
+    </section>
+
+    <div id="rotate-hint" class="rotate-hint hidden">請將手機橫過來玩</div>
+  </div>
+
+  <script src="engine.js?v=20261111a"></script>
+  <script src="render.js?v=20261111a"></script>
+  <script src="audio.js?v=20261111a"></script>
+  <script src="game.js?v=20261111a"></script>
+</body>
+</html>
