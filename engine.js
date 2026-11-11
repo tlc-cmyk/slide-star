@@ -310,8 +310,8 @@
     },
     {
       id: "danube",
-      title: "藍色多瑞河",
-      label: "第四首　藍色多瑞河",
+      title: "藍色多瑙河",
+      label: "第四首　藍色多瑙河",
       key: "D",
       bpm: 120,
       meter: 3,

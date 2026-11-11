@@ -172,7 +172,7 @@ assert.ok(joy.total > 20 && joy.total < 50, "joy length should be 20–50s, got 
 
 const danube = E.getSong("danube");
 assertContinuous(danube);
-assert.equal(danube.title, "藍色多瑞河");
+assert.equal(danube.title, "藍色多瑙河");
 assert.equal(danube.key, "D");
 assert.equal(danube.bpm, 120);
 assert.equal(danube.meter, 3);
